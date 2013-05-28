@@ -1,0 +1,94 @@
+CHANGELOG Roundcube Webmail
+===========================
+
+- Fix searching by date in address book (#1488888)
+- Improve charset detection by prioritizing charset according to user language (#1485669)
+- Fix handling of escaped separator in vCard file (#1488896)
+- Fix #countcontrols issue in IE<=8 when text is very long (#1488890)
+- Add option to use envelope From address for MDN responses (#1488880)
+- Add possibility to search in message body only (#1488770)
+- Support "multipart/relative" as an alias for "multipart/related" type (#1488886)
+- Display PGP/MIME signature attachments as "Digital Signature" (#1488570)
+- Workaround UW-IMAP bug where hierarchy separator is added to the shared folder name (#1488879)
+- Fix version comparisons with -stable suffix (#1488876)
+- Add unsupported alternative parts to attachments list (#1488870)
+- Add Compose button on message view page (#1488747)
+- Display 'Sender' header in message preview
+- Plugin API: Added message_before_send hook
+- Fix contact copy/add-to-group operations on search result (#1488862)
+- Use matching identity in MDN response (#1488864)
+- Fix unwanted horizontal scrollbar in message preview header (#1488866)
+- Fix handling of signatures on draft edit (#1488798)
+- Fix so compacting of non-empty folder is possible also when messages list is empty (#1488858)
+- Allow forwarding of multiple emails (#1486854)
+- Fix big memory consumption of DB layer (#1488856)
+- Add workaround for IE<=8 bug where Content-Disposition:inline was ignored (#1488844)
+- Fix XSS vulnerability in vbscript: and data:text links handling (#1488850)
+- Fix broken message/part bodies when FETCH response contains more untagged lines (#1488836)
+- Fix empty email on identities list after identity update (#1488834)
+- Add new identities_level: (4) one identity with possibility to edit only signature
+- Use Delivered-To and Envelope-To headers for identity selection (#1488840, #1488553)
+- Fix XSS vulnerability using Flash files (#1488828)
+- Fix absolute positioning in HTML messages (#1488819)
+- Fix cache (in)validation after setting \Deleted flag
+- Fix keybord events on messages list in opera browser (#1488823)
+- Fix selection of collapsed thread rows (#1488772)
+- Always save drafts with format=flowed in order to keep original line wraps (#1488799)
+- Fix wrapping of quoted text with format=flowed (#1488177)
+- Select default_addressbook on the list in Address Book (#1488280)
+- Fix so mobile phone has TYPE=CELL in exported vCard (#1488812)
+- Support contacts import from CSV file (#1486399)
+- Improved keep-alive action. Now the interval is based on session_lifetime (#1488507)
+- Added cross-task 'refresh' request for system state updates (#1488507)
+- Renamed config options: keep_alive to refresh_interval, min_keep_alive to min_refresh_interval
+- Fix handling of text/enriched content on message reply/forward/edit
+- Option to display attached images as thumbnails below message body
+- Upgraded to jQuery 1.8.3 and jQuery UI 1.9.1
+- Add config option to automatically generate LDAP attributes for new entries
+- Add user settings to open message view and compose form in new windows (#1485486)
+- Better client-side timezone detection using the jsTimezoneDetect library (#1488725)
+- Add option to disable saving sent mail in Sent folder - no_save_sent_messages (#1488686)
+- Fix handling dont_override with message_sort_col and message_sort_order settings (#1488760)
+- Fix handling of URLs with asterisk characters (#1488759)
+- Remove automatic to-lowercase conversion of usernames (#1488715)
+- Plugin API: Add 'email_list' argument for identities data in user_create hook
+- Integrated zipdownload plugin to download all attachments (#1445509)
+- Fix HTML special characters handling in message list/header display (#1488523)
+- List related text/html part as attachment in plain text mode (#1488677)
+- Use IMAP BINARY (RFC3516) extension to fetch message/part bodies
+- Fix folder creation under public namespace root (#1488665)
+- Fix so "Edit as new" on draft creates a new message (#1488687)
+- Fix invalid error message on deleting mail from read only folder (#1488694)
+- Replace data URIs of images (pasted in HTML editor) with inline attachments (#1488502)
+- Remove (too big) min-width on mail screen
+- Added template object 'frame'
+- Add option to enable HTML editor on forwarding (#1488517)
+- Add option to not include original message on reply, rename option top_posting to reply_mode (#1485149)
+- Added session_path config option and unified cookies settings in javascript
+- Added "Undeleted" option to messages list filter
+- Rewritten test scripts for PHPUnit
+- Add new DB abstraction layer based on PHP PDO, supporting SQLite3 (#1488332)
+- Removed PEAR::MDB2 package
+- Removed users.alias column, added option ('user_aliases')
+  to use email address from identities as username (#1488581)
+- Removed redundant cache.cache_id column (#1488528)
+- Fix order of attachments in sent mail (#1488423)
+- Fix Shift + delete button does not permanently delete messages (#1488243)
+- Add Content-Length for attachments where possible (#1485478)
+- Fix attachment sizes in message print page and attachment preview page (#1488515)
+- Add mail attachments using drag & drop on HTML5 enabled browsers
+- Add workaround for invalid BODYSTRUCTURE response - parse message with Mail_mimeDecode package (#1485585)
+- Display Tiff as Jpeg in browsers without Tiff support (#1488452)
+- Don't display Pdf/Tiff/Flash attachments inline without browser support (#1488452, #1487929)
+- Add is_escaped attribute for html_select and html_textarea (#1488485)
+- Fix issue where draft auto-save wasn't executed after some inactivity time
+- Add vCard import from multiple files at once (#1488015)
+- Roundcube Framework:
+    Add possibility to replace IMAP driver with custom class
+    Add IMAP auto-connection feature, improving performance with caching enabled
+    Replace imap_init hook with storage_init (with additional 'driver' argument)
+    Improved performance by caching IMAP server's capabilities in session
+    Unified global functions naming (rcube_ prefix)
+    Better classes separation
+    Framework files moved to lib/Roundcube
+
